@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/edittext_styles.xml -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- EditText focused state -->
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="#B9DEF6" /> <!-- Background color when focused -->
+            <corners android:radius="8dp" /> <!-- Rounded corners -->
+        </shape>
+    </item>
+    <!-- EditText default state -->
+    <item>
+        <shape>
+            <solid android:color="#ADCAFD" /> <!-- Default background color -->
+            <corners android:radius="8dp" /> <!-- Rounded corners -->
+        </shape>
+    </item>
+</selector>
