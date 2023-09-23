@@ -9,6 +9,6 @@ class BooksViewModelFactory(private val repository: BooksRepository) : ViewModel
         if (modelClass.isAssignableFrom(BooksViewModel::class.java)){
             return BooksViewModel(repository) as T
         }
-        throw IllegalArgumentException("Unknown Viewmodel class")
+        throw IllegalArgumentException("Unknown View model class")
     }
 }

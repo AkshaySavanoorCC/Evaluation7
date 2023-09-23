@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.akshay.evaluation7.fragments.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="Books Collection" >
         <action
             android:id="@+id/action_homeFragment_to_booksDetailsFragment"
             app:destination="@id/booksDetailsFragment" />
@@ -16,5 +16,5 @@
     <fragment
         android:id="@+id/booksDetailsFragment"
         android:name="com.akshay.evaluation7.fragments.BooksDetailsFragment"
-        android:label="BooksDetailsFragment" />
+        android:label="Unread Books" />
 </navigation>

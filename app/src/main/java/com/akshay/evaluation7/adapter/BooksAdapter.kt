@@ -1,9 +1,8 @@
 package com.akshay.evaluation7.adapter
 
-import android.util.Log
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +15,7 @@ class BooksAdapter(private val onToggleChanged :(BooksEntity,Boolean) -> Unit,pr
 
     class ViewHolder(private val binding: BooksCardViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
         val isReadToggle: Switch = binding.isReadToggle
         val delete : TextView = binding.deleteBook
 
@@ -24,7 +24,6 @@ class BooksAdapter(private val onToggleChanged :(BooksEntity,Boolean) -> Unit,pr
                 authorNameTextView.text = item.author
                 bookTitleTextView.text = item.title
                 isReadToggle.isChecked = item.isRead
-                Log.i("tt","${item.bookId}: ${item.isRead}")
             }
         }
     }
@@ -44,9 +43,7 @@ class BooksAdapter(private val onToggleChanged :(BooksEntity,Boolean) -> Unit,pr
         holder.delete.setOnClickListener { onDelete(current) }
         holder.isReadToggle.setOnCheckedChangeListener { _, isChecked ->
                 onToggleChanged(current,isChecked)
-
         }
-
     }
 
     companion object {

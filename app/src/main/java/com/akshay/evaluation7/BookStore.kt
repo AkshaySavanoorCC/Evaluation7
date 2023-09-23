@@ -14,8 +14,6 @@ class BookStore : AppCompatActivity() {
         val navController = this.findNavController(R.id.nav_host_fragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
         val dataStore = VisitCountDataStore(this)
-
-
         GlobalScope.launch {
             dataStore.setVisitCount(this@BookStore)
 

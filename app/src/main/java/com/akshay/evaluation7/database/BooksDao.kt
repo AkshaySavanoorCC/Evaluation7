@@ -1,6 +1,5 @@
 package com.akshay.evaluation7.database
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -23,7 +22,6 @@ interface BooksDao {
 
     @Update
     fun updateReadStatus(book: BooksEntity)
-
 
     @Query("SELECT * FROM books_collection WHERE read_status=1")
     fun getAllReadBooks(): Flow<List<BooksEntity>>

@@ -2,16 +2,13 @@ package com.akshay.evaluation7.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Switch
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.akshay.evaluation7.databinding.BooksCardViewBinding
 import com.akshay.evaluation7.databinding.CardReadBooksBinding
 import com.akshay.evaluation7.model.BooksEntity
 
-class BooksReadAdapter() : ListAdapter<BooksEntity, BooksReadAdapter.ViewHolder>(DiffCallback) {
+class BooksReadAdapter : ListAdapter<BooksEntity, BooksReadAdapter.ViewHolder>(DiffCallback) {
 
     class ViewHolder(private val binding: CardReadBooksBinding) :
         RecyclerView.ViewHolder(binding.root) {

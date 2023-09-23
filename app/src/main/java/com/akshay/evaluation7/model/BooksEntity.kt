@@ -17,9 +17,3 @@ class BooksEntity(
     @ColumnInfo(name = "read_status")
     var isRead:Boolean
 )
-{
-
-
-
-
-}

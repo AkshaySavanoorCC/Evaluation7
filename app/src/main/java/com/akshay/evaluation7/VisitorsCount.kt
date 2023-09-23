@@ -1,6 +1,5 @@
 package com.akshay.evaluation7
 import android.content.Context
-import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
@@ -22,7 +21,7 @@ private val Context.dataStore : DataStore<Preferences> by preferencesDataStore(
 )
 
 class VisitCountDataStore(context: Context) {
-    private val VISIT_COUNT = intPreferencesKey("visit_count")
+    private val VISITORS_COUNT = intPreferencesKey("visitors_count")
 
     val preferenceFlow: Flow<Int> = context.dataStore.data
         .catch {
@@ -35,16 +34,15 @@ class VisitCountDataStore(context: Context) {
         }
         .map { preferences ->
 
-            preferences[VISIT_COUNT] ?: 0
+            preferences[VISITORS_COUNT] ?: 0
 
         }
 
     suspend fun setVisitCount(context: Context){
         context.dataStore.edit {
 
-
-            val currentValue = it[VISIT_COUNT] ?: 0
-            it[VISIT_COUNT] = currentValue + 1
+            val currentValue = it[VISITORS_COUNT] ?: 0
+            it[VISITORS_COUNT] = currentValue + 1
         }
     }
 
